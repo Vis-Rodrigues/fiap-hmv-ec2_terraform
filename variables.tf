@@ -10,16 +10,44 @@ variable "ec2_count" {
   default     = 1
 }
 
+variable "min_size" {
+  type        = number
+  default     = 1
+}
+
+variable "max_size" {
+  type        = number
+  default     = 2
+}
+
 variable "ec2_name" {
   description = "EC2 Name"
   type        = string
   default     = "fiap-hmv-service"
 }
 
+variable "http_port" {
+  description = "The port the will be listening"
+  type        = number
+  default     = 8080
+}
+
+variable "elb_port" {
+  description = "The port the elb will be listening"
+  type        = number
+  default     = 80
+}
+
+variable "server_port" {
+  description = "The port the web server will be listening"
+  type        = number
+  default     = 8080
+}
+
 variable "ec2_key_name" {
-  description = "The Name of the EC2"
+  description = "Key pair name"
   type        = string
-  default     = "fiap-hmv"
+  default     = "fiap-hmv-key-pair"
 }
 
 variable "ec2_ami" {
